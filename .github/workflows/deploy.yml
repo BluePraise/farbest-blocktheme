@@ -16,7 +16,7 @@ jobs:
       - name: Deploy via rsync
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-          REMOTE_HOST: gvam1152.siteground.biz
+          REMOTE_HOST: ssh.navesinkwebsolutions.com
           REMOTE_PORT: 18765
           REMOTE_USER: u2827-g9lpwz7hodtd
           REMOTE_PATH: /home/customer/www/farbest-blocktheme.navesinkwebsolutions.com/public_html/wp-content/themes/farbest-block-theme
