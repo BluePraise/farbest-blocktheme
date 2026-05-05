@@ -1,0 +1,43 @@
+/*
+ * tokens.css
+ * Farbest — Design Tokens (Single Source of Truth)
+ * Version: 1.0.0
+ * Date: 2026-04-22
+ *
+ * All brand colors and design tokens are defined here.
+ * Referenced by:
+ *   - farbest.css (theme)
+ *   - ingredient-single.css (theme)
+ *   - assets/src/styles/main.scss (plugin — via hardcoded fallbacks)
+ *   - farbest-blocks/theme.json (block theme — palette mirrors these values)
+ * =========================================
+ */
+
+:root {
+    /* ── Brand Palette ──────────────────────────────────────────────────────── */
+    --farbest-green:         #648c1c; /* PMS 370  — logo green                */
+    --farbest-teal:          #003e52; /* PMS 3035 — logo teal                 */
+    --farbest-lime:          #b5b800; /* PMS 390C — CTA lime green            */
+    --farbest-lime-dark:     #9da000; /* CTA hover state                      */
+    --farbest-heading-green: #4D7B29; /* h1–h6 heading green                  */
+    --farbest-moss-green:    #5C643A; /* labels, .btn, moss accent            */
+    --farbest-beige:         #f2efe9; /* page background                      */
+    --farbest-beige-dark:    #ddd7cb; /* borders, dividers                    */
+    --farbest-warm-grey:     #383838; /* body text                            */
+    --farbest-footer-bg:     #1f2f36; /* footer / dark navy                   */
+    --farbest-white:         #ffffff;
+
+    /* ── Semantic Aliases ───────────────────────────────────────────────────── */
+    --color-primary:         var(--farbest-green);
+    --color-cta:             var(--farbest-lime);
+    --color-cta-hover:       var(--farbest-lime-dark);
+    --color-cta-text:        var(--farbest-footer-bg);
+    --color-heading:         var(--farbest-heading-green);
+    --color-text:            var(--farbest-warm-grey);
+    --color-bg:              var(--farbest-beige);
+    --color-bg-dark:         var(--farbest-beige-dark);
+    --color-border:          var(--farbest-warm-grey);
+    --color-label:           var(--farbest-moss-green);
+    --color-tag-text:        var(--farbest-teal);
+    --color-tag-bg:          var(--farbest-beige);
+}

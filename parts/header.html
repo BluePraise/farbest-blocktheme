@@ -1,0 +1,39 @@
+<!-- wp:group {"tagName":"header","className":"farbest-header","metadata":{"name":"Site Header"},"layout":{"type":"constrained"}} -->
+<header class="wp-block-group farbest-header" id="farbest-header">
+
+	<!-- wp:group {"className":"farbest-header__inner","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between","verticalAlignment":"center"}} -->
+	<div class="wp-block-group farbest-header__inner">
+
+		<!-- wp:site-logo {"width":160,"className":"farbest-header__logo"} /-->
+
+		<!-- wp:navigation {"className":"farbest-header__nav","layout":{"type":"flex","justifyContent":"right","orientation":"horizontal"},"style":{"spacing":{"margin":{"top":"0"}}}} /-->
+
+		<!-- wp:html -->
+		<button
+			class="farbest-header__hamburger"
+			aria-label="Open menu"
+			aria-expanded="false"
+			aria-controls="farbest-mobile-menu"
+		>
+			<span class="farbest-header__hamburger-line"></span>
+			<span class="farbest-header__hamburger-line"></span>
+			<span class="farbest-header__hamburger-line"></span>
+		</button>
+		<!-- /wp:html -->
+
+	</div>
+	<!-- /wp:group -->
+
+</header>
+<!-- /wp:group -->
+
+<!-- wp:html -->
+<div class="farbest-mobile-menu" id="farbest-mobile-menu" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+	<button class="farbest-mobile-menu__close" aria-label="Close menu">
+		<span class="farbest-mobile-menu__close-line"></span>
+		<span class="farbest-mobile-menu__close-line"></span>
+	</button>
+	<nav class="farbest-mobile-menu__nav" aria-label="Mobile primary navigation"></nav>
+</div>
+<div class="farbest-mobile-overlay" id="farbest-mobile-overlay" aria-hidden="true"></div>
+<!-- /wp:html -->

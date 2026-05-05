@@ -1,0 +1,207 @@
+/* ============================================================
+   Farbest Header — sticky + mobile drawer
+   ============================================================ */
+
+/* ── Header shell ──────────────────────────────────────────── */
+.farbest-header {
+	position: relative;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 1000;
+	background: var(--farbest-white);
+	border-bottom: 1px solid var(--farbest-beige-dark);
+	transition: box-shadow 0.25s ease;
+}
+
+.farbest-header.is-sticky {
+	position: fixed;
+	box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
+}
+
+/* Reserve space so content doesn't jump when header becomes fixed */
+body.has-sticky-header {
+	padding-top: var(--farbest-header-height, 80px);
+}
+
+/* ── Inner layout ──────────────────────────────────────────── */
+.farbest-header__inner {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 2rem;
+	height: 80px;
+}
+
+/* ── Logo ──────────────────────────────────────────────────── */
+.farbest-header__logo {
+	display: flex;
+	align-items: center;
+	flex-shrink: 0;
+	text-decoration: none;
+}
+
+.farbest-header__logo img,
+.farbest-header__logo .wp-block-site-logo img {
+	height: 52px;
+	width: auto;
+	display: block;
+}
+
+/* ── Desktop nav ───────────────────────────────────────────── */
+.farbest-header__nav {
+	display: flex;
+	align-items: center;
+}
+
+.farbest-header__nav .wp-block-navigation__container,
+.farbest-header__nav ul {
+	display: flex;
+	align-items: center;
+	gap: 2rem;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.farbest-header__nav a {
+	color: var(--farbest-warm-grey);
+	font-size: 0.9375rem;
+	font-weight: 400;
+	text-decoration: none;
+	transition: color 0.2s ease;
+}
+
+.farbest-header__nav a:hover {
+	color: var(--farbest-teal);
+}
+
+/* ── Hamburger button ──────────────────────────────────────── */
+.farbest-header__hamburger {
+	display: none;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 5px;
+	width: 40px;
+	height: 40px;
+	background: none;
+	border: none;
+	cursor: pointer;
+	padding: 0;
+	flex-shrink: 0;
+}
+
+.farbest-header__hamburger-line {
+	display: block;
+	width: 24px;
+	height: 2px;
+	background: var(--farbest-teal);
+	border-radius: 2px;
+	transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+/* ── Mobile drawer ─────────────────────────────────────────── */
+.farbest-mobile-menu {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	background: var(--farbest-teal);
+	z-index: 1100;
+	transform: translateX(100%);
+	transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+	display: flex;
+	flex-direction: column;
+	padding: 2rem 1.5rem;
+	overflow-y: auto;
+}
+
+.farbest-mobile-menu.is-open {
+	transform: translateX(0);
+}
+
+/* ── Close button ──────────────────────────────────────────── */
+.farbest-mobile-menu__close {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	align-self: flex-end;
+	width: 44px;
+	height: 44px;
+	background: none;
+	border: none;
+	cursor: pointer;
+	padding: 0;
+	position: relative;
+	margin-bottom: 2rem;
+}
+
+.farbest-mobile-menu__close-line {
+	position: absolute;
+	width: 24px;
+	height: 2px;
+	background: var(--farbest-white);
+	border-radius: 2px;
+}
+
+.farbest-mobile-menu__close-line:first-child {
+	transform: rotate(45deg);
+}
+
+.farbest-mobile-menu__close-line:last-child {
+	transform: rotate(-45deg);
+}
+
+/* ── Mobile nav items ──────────────────────────────────────── */
+.farbest-mobile-menu__nav .wp-block-navigation__container,
+.farbest-mobile-menu__nav ul {
+	display: flex;
+	flex-direction: column;
+	gap: 0;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.farbest-mobile-menu__nav a {
+	display: block;
+	color: var(--farbest-white);
+	font-size: 1.25rem;
+	font-weight: 400;
+	text-decoration: none;
+	padding: 1rem 0;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+	transition: color 0.2s ease;
+}
+
+.farbest-mobile-menu__nav a:hover {
+	color: var(--farbest-lime);
+}
+
+/* ── Overlay ───────────────────────────────────────────────── */
+.farbest-mobile-overlay {
+	display: none;
+	position: fixed;
+	inset: 0;
+	background: rgba(0, 0, 0, 0.4);
+	z-index: 1050;
+}
+
+.farbest-mobile-overlay.is-visible {
+	display: block;
+}
+
+/* ── Responsive: show hamburger, hide desktop nav ─────────── */
+@media (max-width: 767px) {
+	.farbest-header__nav {
+		display: none;
+	}
+
+	.farbest-header__hamburger {
+		display: flex;
+	}
+}
