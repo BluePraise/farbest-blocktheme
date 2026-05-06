@@ -13,6 +13,13 @@
  * =========================================
  */
 
+input,
+button,
+select,
+textarea {
+    font-family: inherit;
+}
+
 :root {
     /* ── Brand Palette ──────────────────────────────────────────────────────── */
     --farbest-green:         #648c1c; /* PMS 370  — logo green                */

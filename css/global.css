@@ -1,0 +1,36 @@
+/**
+ * Global Components — Farbest Block Theme
+ *
+ * Reusable component styles loaded on every page.
+ * Depends on tokens.css being loaded first.
+ */
+
+/* ── CTA Button ───────────────────────────────────────────────────────────── */
+
+.fbd-cta-button {
+    box-shadow: unset;
+    display: inline-block;
+    background: var(--color-cta);
+    color: var(--color-cta-text);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 14px 28px;
+    border-radius: 5px;
+    border: unset;
+    white-space: nowrap;
+    transition: background 0.2s;
+}
+
+.fbd-cta-button:hover,
+.fbd-cta-button:focus {
+    background: var(--color-cta-hover);
+    color: var(--color-cta-text);
+    box-shadow: unset;
+}
+
+.fbd-cta-button:visited {
+    color: var(--color-cta-text);
+}

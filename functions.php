@@ -28,6 +28,13 @@ function farbest_block_theme_styles() {
 	);
 
 	wp_enqueue_style(
+		'farbest-global',
+		get_template_directory_uri() . '/css/global.css',
+		array( 'farbest-tokens' ),
+		'1.0.0'
+	);
+
+	wp_enqueue_style(
 		'farbest-header',
 		get_template_directory_uri() . '/css/header.css',
 		array( 'farbest-tokens' ),
