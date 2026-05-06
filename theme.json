@@ -88,33 +88,7 @@
 				{
 					"fontFamily": "'Open Sans', sans-serif",
 					"name": "Open Sans",
-					"slug": "open-sans",
-					"fontFace": [
-						{
-							"fontFamily": "Open Sans",
-							"fontStyle": "normal",
-							"fontWeight": "300",
-							"src": [ "https://fonts.gstatic.com/s/opensans/v40/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0C24.woff2" ]
-						},
-						{
-							"fontFamily": "Open Sans",
-							"fontStyle": "normal",
-							"fontWeight": "400",
-							"src": [ "https://fonts.gstatic.com/s/opensans/v40/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0B24.woff2" ]
-						},
-						{
-							"fontFamily": "Open Sans",
-							"fontStyle": "normal",
-							"fontWeight": "600",
-							"src": [ "https://fonts.gstatic.com/s/opensans/v40/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0F24.woff2" ]
-						},
-						{
-							"fontFamily": "Open Sans",
-							"fontStyle": "normal",
-							"fontWeight": "700",
-							"src": [ "https://fonts.gstatic.com/s/opensans/v40/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0G24.woff2" ]
-						}
-					]
+					"slug": "open-sans"
 				},
 				{
 					"fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
@@ -164,6 +138,9 @@
 		"useRootPaddingAwareAlignments": true
 	},
 	"styles": {
+		"spacing": {
+			"blockGap": "0"
+		},
 		"color": {
 			"background": "#f2efe9",
 			"text": "#383838"

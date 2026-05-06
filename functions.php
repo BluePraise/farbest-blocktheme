@@ -14,6 +14,13 @@ add_action( 'after_setup_theme', 'farbest_block_theme_setup' );
 
 function farbest_block_theme_styles() {
 	wp_enqueue_style(
+		'farbest-open-sans',
+		'https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap',
+		array(),
+		null
+	);
+
+	wp_enqueue_style(
 		'farbest-tokens',
 		get_template_directory_uri() . '/css/tokens.css',
 		array(),
@@ -34,6 +41,15 @@ function farbest_block_theme_styles() {
 		'1.0.0'
 	);
 
+	if ( is_singular( 'fpc_ingredient' ) ) {
+		wp_enqueue_style(
+			'farbest-ingredient-single',
+			get_template_directory_uri() . '/css/ingredient-single.css',
+			array( 'farbest-tokens' ),
+			'1.0.0'
+		);
+	}
+
 	wp_enqueue_script(
 		'farbest-header',
 		get_template_directory_uri() . '/js/header.js',
@@ -49,25 +65,19 @@ add_action( 'wp_enqueue_scripts', 'farbest_block_theme_styles' );
  *
  * The block template (single-fpc_ingredient.html) uses wp:post-content to
  * render the main area. This filter replaces that empty content with the
- * plugin's full PHP template output, keeping header/footer in the block theme.
+ * plugin's rendered HTML, keeping header/footer in the block theme's template
+ * parts. The plugin's FPC_Template_Loader::render_single() handles ob_start
+ * and template path resolution — the theme does not need to know either.
  */
 function farbest_render_ingredient_content( $content ) {
 	if ( ! is_singular( 'fpc_ingredient' ) || ! in_the_loop() || ! is_main_query() ) {
 		return $content;
 	}
 
-	$template = WP_PLUGIN_DIR . '/farbest-product-catalog/templates/single-ingredient.php';
-
-	if ( ! file_exists( $template ) ) {
+	if ( ! class_exists( 'FPC_Template_Loader' ) ) {
 		return $content;
 	}
 
-	ob_start();
-	// Signal the template it is embedded — plugin template checks this to skip
-	// its own get_header() / get_footer() calls when running inside the block theme.
-	$GLOBALS['farbest_embedded_template'] = true;
-	include $template;
-	unset( $GLOBALS['farbest_embedded_template'] );
-	return ob_get_clean();
+	return FPC_Template_Loader::render_single();
 }
 add_filter( 'the_content', 'farbest_render_ingredient_content' );
