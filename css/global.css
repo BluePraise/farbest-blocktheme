@@ -5,6 +5,27 @@
  * Depends on tokens.css being loaded first.
  */
 
+/* ── Hills divider (ingredient pages only) ────────────────────────────────── */
+/*
+ * White SVG landscape sits between the main content and the footer wave.
+ * Hidden by default; shown via body class on ingredient archive/single/tax pages.
+ */
+
+.farbest-hills-divider {
+    display: none;
+}
+
+body.single-fpc_ingredient .farbest-hills-divider,
+body.tax-fpc_category .farbest-hills-divider,
+body.post-type-archive-fpc_ingredient .farbest-hills-divider {
+    display: block;
+    width: 100%;
+    height: 180px;
+    background: url('../images/hills_and_valley.svg') no-repeat bottom center;
+    background-size: cover;
+    pointer-events: none;
+}
+
 /* ── CTA Button ───────────────────────────────────────────────────────────── */
 
 .fbd-cta-button {

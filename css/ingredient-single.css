@@ -257,24 +257,4 @@
     border-top: 2px solid var(--color-bg-dark);
 }
 
-/* ── SVG watermark (background decoration) ────────────────────────────────── */
-/*
- * In the classic theme this targeted #content::after (a classic theme div).
- * Block themes have no #content — we use body class pseudo-elements instead.
- * Requires hills_and_valley.svg to exist in the block theme's images/ folder.
- */
-
-body.single-fpc_ingredient::after,
-body.tax-fpc_category::after,
-body.post-type-archive-fpc_ingredient::after {
-    content: "";
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    background: url(../images/hills_and_valley.svg) no-repeat bottom left;
-    background-size: cover;
-    height: 100vh;
-    width: 100vw;
-    z-index: -2;
-    pointer-events: none;
-}
+/* Hills divider moved to global.css — shown on ingredient pages only */
