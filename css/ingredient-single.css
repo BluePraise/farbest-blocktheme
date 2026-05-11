@@ -257,4 +257,4 @@
     border-top: 2px solid var(--color-bg-dark);
 }
 
-/* Hills divider moved to global.css — shown on ingredient pages only */
+/* SVG watermark moved to global.css (loads on all ingredient page types) */

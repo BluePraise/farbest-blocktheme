@@ -142,8 +142,8 @@
 			"blockGap": "0"
 		},
 		"color": {
-			"background": "#f2efe9",
-			"text": "#383838"
+			"background": "var:preset|color|beige",
+			"text": "var:preset|color|warm-grey"
 		},
 		"typography": {
 			"fontFamily": "var(--wp--preset--font-family--open-sans)",
@@ -152,57 +152,57 @@
 		},
 		"elements": {
 			"h1": {
-				"color": { "text": "#4D7B29" },
+				"color": { "text": "var:preset|color|heading-green" },
 				"typography": {
 					"fontWeight": "700",
 					"fontSize": "var(--wp--preset--font-size--xxx-large)"
 				}
 			},
 			"h2": {
-				"color": { "text": "#4D7B29" },
+				"color": { "text": "var:preset|color|heading-green" },
 				"typography": {
 					"fontWeight": "700",
 					"fontSize": "var(--wp--preset--font-size--xx-large)"
 				}
 			},
 			"h3": {
-				"color": { "text": "#4D7B29" },
+				"color": { "text": "var:preset|color|heading-green" },
 				"typography": {
 					"fontWeight": "600",
 					"fontSize": "var(--wp--preset--font-size--x-large)"
 				}
 			},
 			"h4": {
-				"color": { "text": "#4D7B29" },
+				"color": { "text": "var:preset|color|heading-green" },
 				"typography": {
 					"fontWeight": "600",
 					"fontSize": "var(--wp--preset--font-size--large)"
 				}
 			},
 			"h5": {
-				"color": { "text": "#4D7B29" },
+				"color": { "text": "var:preset|color|heading-green" },
 				"typography": {
 					"fontWeight": "600",
 					"fontSize": "var(--wp--preset--font-size--medium)"
 				}
 			},
 			"h6": {
-				"color": { "text": "#4D7B29" },
+				"color": { "text": "var:preset|color|heading-green" },
 				"typography": {
 					"fontWeight": "600",
 					"fontSize": "var(--wp--preset--font-size--medium)"
 				}
 			},
 			"link": {
-				"color": { "text": "#648c1c" },
+				"color": { "text": "var:preset|color|green" },
 				":hover": {
-					"color": { "text": "#4D7B29" }
+					"color": { "text": "var:preset|color|heading-green" }
 				}
 			},
 			"button": {
 				"color": {
-					"background": "#b5b800",
-					"text": "#1f2f36"
+					"background": "var:preset|color|lime",
+					"text": "var:preset|color|footer-navy"
 				},
 				"typography": {
 					"fontWeight": "600",
@@ -213,8 +213,8 @@
 				},
 				":hover": {
 					"color": {
-						"background": "#9da000",
-						"text": "#1f2f36"
+						"background": "var:preset|color|lime-dark",
+						"text": "var:preset|color|footer-navy"
 					}
 				}
 			}

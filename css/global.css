@@ -5,24 +5,32 @@
  * Depends on tokens.css being loaded first.
  */
 
-/* ── Hills divider (ingredient pages only) ────────────────────────────────── */
+/* ── SVG watermark (ingredient pages) ────────────────────────────────────── */
 /*
- * White SVG landscape sits between the main content and the footer wave.
- * Hidden by default; shown via body class on ingredient archive/single/tax pages.
+ * Lives on main so the hills remain part of the page content area, but extends
+ * slightly below main to fill the transparent top band of the footer wave SVG.
+ * Must live in global.css — ingredient-single.css only loads on singular pages.
  */
-
-.farbest-hills-divider {
-    display: none;
+body.single-fpc_ingredient main,
+body.tax-fpc_category main.wp-block-group,
+body.post-type-archive-fpc_ingredient main {
+    position: relative;
+    isolation: isolate;
+    padding-bottom: 300px; /* make room for the hills SVG, this only works on .single-fpc_ingredient */
 }
 
-body.single-fpc_ingredient .farbest-hills-divider,
-body.tax-fpc_category .farbest-hills-divider,
-body.post-type-archive-fpc_ingredient .farbest-hills-divider {
-    display: block;
-    width: 100%;
-    height: 180px;
-    background: url('../images/hills_and_valley.svg') no-repeat bottom center;
+body.single-fpc_ingredient main::after,
+body.tax-fpc_category main.wp-block-group::after,
+body.post-type-archive-fpc_ingredient main::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: calc(-2.35vw - 2px);
+    background: url('../images/hills_and_valley.svg') no-repeat bottom left;
     background-size: cover;
+    height: 100vh;
+    z-index: -2;
     pointer-events: none;
 }
 

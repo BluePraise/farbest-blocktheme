@@ -4,9 +4,11 @@
 
 /* ── Wave shape ────────────────────────────────────────────── */
 .farbest-footer-wave {
+	position: relative;
+	z-index: 2; /* place over the hills SVG in global.css */
 	display: block;
 	line-height: 0;
-	margin-bottom: -1px;
+	margin-bottom: -2px;
 }
 
 .farbest-footer-wave svg {
@@ -17,6 +19,8 @@
 
 /* ── Footer shell ──────────────────────────────────────────── */
 .farbest-footer {
+	position: relative;
+	z-index: 2;
 	background: var(--farbest-footer-bg);
 	color: var(--farbest-beige-dark);
 	padding-top: 3rem;

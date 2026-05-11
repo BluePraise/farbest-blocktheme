@@ -22,17 +22,18 @@ textarea {
 
 :root {
     /* ── Brand Palette ──────────────────────────────────────────────────────── */
-    --farbest-green:         #648c1c; /* PMS 370  — logo green                */
-    --farbest-teal:          #003e52; /* PMS 3035 — logo teal                 */
-    --farbest-lime:          #b5b800; /* PMS 390C — CTA lime green            */
-    --farbest-lime-dark:     #9da000; /* CTA hover state                      */
-    --farbest-heading-green: #4D7B29; /* h1–h6 heading green                  */
-    --farbest-moss-green:    #5C643A; /* labels, .btn, moss accent            */
-    --farbest-beige:         #f2efe9; /* page background                      */
-    --farbest-beige-dark:    #ddd7cb; /* borders, dividers                    */
-    --farbest-warm-grey:     #383838; /* body text                            */
-    --farbest-footer-bg:     #1f2f36; /* footer / dark navy                   */
-    --farbest-white:         #ffffff;
+    /* Aliases to theme.json palette vars; hex fallbacks ensure plugin-safety.  */
+    --farbest-green:         var(--wp--preset--color--green,        #648c1c); /* PMS 370  — logo green   */
+    --farbest-teal:          var(--wp--preset--color--teal,         #003e52); /* PMS 3035 — logo teal    */
+    --farbest-lime:          var(--wp--preset--color--lime,         #b5b800); /* PMS 390C — CTA lime     */
+    --farbest-lime-dark:     var(--wp--preset--color--lime-dark,    #9da000); /* CTA hover state         */
+    --farbest-heading-green: var(--wp--preset--color--heading-green,#4D7B29); /* h1–h6 heading green     */
+    --farbest-moss-green:    var(--wp--preset--color--moss-green,   #5C643A); /* labels, .btn, moss      */
+    --farbest-beige:         var(--wp--preset--color--beige,        #f2efe9); /* page background         */
+    --farbest-beige-dark:    var(--wp--preset--color--beige-dark,   #ddd7cb); /* borders, dividers       */
+    --farbest-warm-grey:     var(--wp--preset--color--warm-grey,    #383838); /* body text               */
+    --farbest-footer-bg:     var(--wp--preset--color--footer-navy,  #1f2f36); /* footer / dark navy      */
+    --farbest-white:         var(--wp--preset--color--white,        #ffffff);
 
     /* ── Semantic Aliases ───────────────────────────────────────────────────── */
     --color-primary:         var(--farbest-green);
