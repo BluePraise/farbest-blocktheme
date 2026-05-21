@@ -114,10 +114,8 @@
 	font-size: 0.875rem;
 	line-height: 1.55;
 	color: rgba(255, 255, 255, 0.9);
-	overflow: hidden;
-	display: -webkit-box;
-	-webkit-line-clamp: 5;
-	-webkit-box-orient: vertical;
+	overflow-y: scroll;
+	display: block;
 }
 
 /* ── Divider ────────────────────────────────────────────────────────────────── */
