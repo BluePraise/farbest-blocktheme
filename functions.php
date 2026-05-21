@@ -86,22 +86,15 @@ add_filter( 'block_categories_all', function ( $categories ) {
 }, 9 );
 
 function farbest_enqueue_card_grid_block_style() {
-	function farbest_block_theme_register_block_styles() {
-		wp_enqueue_block_style( 'farbest/card-grid', array(
-			'handle' => 'farbest-card-grid',
-			'src'    => get_template_directory_uri() . '/css/card-grid.css',
-			'deps'   => array( 'farbest-tokens' ),
-			'ver'    => '1.0.0',
-		) );
-	}
-	add_action( 'init', 'farbest_block_theme_register_block_styles', 10 );
+	wp_enqueue_block_style( 'farbest/card-grid', array(
+		'handle' => 'farbest-card-grid',
+		'src'    => get_template_directory_uri() . '/css/card-grid.css',
+		'deps'   => array( 'farbest-tokens' ),
+		'ver'    => '1.0.0',
+	) );
 }
 add_action( 'init', 'farbest_enqueue_card_grid_block_style' );
 
-// add_filter( 'render_block_farbest/card-grid', function ( $html ) {
-// 	wp_enqueue_script( 'farbest-card-grid', get_template_directory_uri() . '/js/card-grid.js', array(), '1.0.0', true );
-// 	return $html;
-// } );
 
 function farbest_block_theme_styles() {
 	wp_enqueue_style(
