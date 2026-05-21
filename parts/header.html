@@ -8,18 +8,7 @@
 
 		<!-- wp:navigation {"className":"farbest-header__nav","layout":{"type":"flex","justifyContent":"right","orientation":"horizontal"},"style":{"spacing":{"margin":{"top":"0"}}}} /-->
 
-		<!-- wp:html -->
-		<button
-			class="farbest-header__hamburger"
-			aria-label="Open menu"
-			aria-expanded="false"
-			aria-controls="farbest-mobile-menu"
-		>
-			<span class="farbest-header__hamburger-line"></span>
-			<span class="farbest-header__hamburger-line"></span>
-			<span class="farbest-header__hamburger-line"></span>
-		</button>
-		<!-- /wp:html -->
+		<!-- wp:farbest/hamburger-button /-->
 
 	</div>
 	<!-- /wp:group -->
@@ -27,13 +16,4 @@
 </header>
 <!-- /wp:group -->
 
-<!-- wp:html -->
-<div class="farbest-mobile-menu" id="farbest-mobile-menu" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Mobile navigation">
-	<button class="farbest-mobile-menu__close" aria-label="Close menu">
-		<span class="farbest-mobile-menu__close-line"></span>
-		<span class="farbest-mobile-menu__close-line"></span>
-	</button>
-	<nav class="farbest-mobile-menu__nav" aria-label="Mobile primary navigation"></nav>
-</div>
-<div class="farbest-mobile-overlay" id="farbest-mobile-overlay" aria-hidden="true"></div>
-<!-- /wp:html -->
+<!-- wp:farbest/mobile-menu /-->

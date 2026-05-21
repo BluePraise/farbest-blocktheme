@@ -17,7 +17,7 @@
 		mobileNav.innerHTML = desktopNav.innerHTML;
 	}
 
-	/* ── Sticky on scroll ──────────────────────────────────── */
+	/* ── Set header height CSS var & apply box-shadow on scroll ── */
 	const headerHeight = header.offsetHeight;
 	document.documentElement.style.setProperty( '--farbest-header-height', headerHeight + 'px' );
 
@@ -28,10 +28,8 @@
 			window.requestAnimationFrame( function () {
 				if ( window.scrollY > 10 ) {
 					header.classList.add( 'is-sticky' );
-					document.body.classList.add( 'has-sticky-header' );
 				} else {
 					header.classList.remove( 'is-sticky' );
-					document.body.classList.remove( 'has-sticky-header' );
 				}
 				ticking = false;
 			} );

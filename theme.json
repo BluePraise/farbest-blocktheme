@@ -218,6 +218,20 @@
 					}
 				}
 			}
+		},
+		"blocks": {
+			"core/post-title": {
+				"typography": {
+					"fontSize": "4rem",
+					"fontWeight": "400"
+				},
+				"spacing": {
+					"margin": {
+						"top": "4rem",
+						"bottom": "3rem"
+					}
+				}
+			}
 		}
 	},
 	"templateParts": [
@@ -228,6 +242,18 @@
 		{
 			"area": "footer",
 			"name": "footer"
+		},
+		{
+			"area": "uncategorized",
+			"name": "footer-wave",
+			"title": "Footer Wave"
+		}
+	],
+	"customTemplates": [
+		{
+			"name": "page-card-grid",
+			"title": "Card Grid",
+			"postTypes": [ "page" ]
 		}
 	],
 	"version": 3

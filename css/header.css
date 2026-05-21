@@ -4,7 +4,7 @@
 
 /* ── Header shell ──────────────────────────────────────────── */
 .farbest-header {
-	position: relative;
+	position: fixed;
 	top: 0;
 	left: 0;
 	right: 0;
@@ -15,12 +15,11 @@
 }
 
 .farbest-header.is-sticky {
-	position: fixed;
 	box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
 }
 
-/* Reserve space so content doesn't jump when header becomes fixed */
-body.has-sticky-header {
+/* Reserve space for the fixed header */
+body {
 	padding-top: var(--farbest-header-height, 80px);
 }
 

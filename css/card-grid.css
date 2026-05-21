@@ -1,0 +1,131 @@
+/* ── Card grid ──────────────────────────────────────────────────────────────── */
+
+.card-grid-wrap {
+	padding: 3rem 2rem;
+	background: var(--farbest-beige-dark);
+}
+
+.card-grid {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 1.25rem;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+@media (max-width: 1024px) { .card-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px)  { .card-grid { grid-template-columns: 1fr; } }
+
+/* ── Card shell ─────────────────────────────────────────────────────────────── */
+
+.grid-card {
+	position: relative;
+	overflow: hidden;
+	aspect-ratio: 3 / 4;
+	cursor: pointer;
+	border-radius: 3px;
+	background: var(--farbest-beige-dark);
+}
+
+/* Image fills card */
+.grid-card > img {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+	transition: transform 0.45s ease;
+}
+
+.grid-card.is-open > img {
+	transform: scale(1.04);
+}
+
+/* ── Bottom label (always visible) ─────────────────────────────────────────── */
+
+.card-info {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	padding: 2.5rem 1.25rem 1.25rem;
+	background: linear-gradient(to top, rgba(0, 0, 0, 0.72) 0%, transparent 100%);
+	pointer-events: none;
+	transition: opacity 0.25s ease;
+}
+
+.grid-card.is-open .card-info {
+	opacity: 0;
+}
+
+.card-name {
+	margin: 0 0 0.2rem;
+	font-size: 1.0625rem;
+	font-weight: 600;
+	color: #fff;
+	line-height: 1.3;
+}
+
+.card-role {
+	margin: 0;
+	font-size: 0.8125rem;
+	font-weight: 300;
+	color: rgba(255, 255, 255, 0.82);
+	letter-spacing: 0.02em;
+}
+
+/* ── Click overlay ──────────────────────────────────────────────────────────── */
+
+/* TODO(human): Style .card-overlay and .card-bio.
+   The JS in card-grid.js adds/removes .is-open on .grid-card when the visitor clicks.
+   The overlay should:
+     - Cover the full card (position: absolute; inset: 0)
+     - Use --farbest-teal (#003e52) as the base with a gradient + backdrop-filter blur
+     - Animate in smoothly: start hidden (opacity 0, translateY ~8px), reveal on .is-open
+     - Lay out children vertically (flex column) with gap, padding, centered
+     - Be non-interactive when hidden (pointer-events: none → auto on .is-open)
+   .card-bio should be legible white text on the teal background. */
+
+/* ── Divider ────────────────────────────────────────────────────────────────── */
+
+.card-divider {
+	width: 36px;
+	height: 2px;
+	background: rgba(255, 255, 255, 0.35);
+	border: none;
+	margin: 0;
+	flex-shrink: 0;
+}
+
+/* ── Contact icon row ───────────────────────────────────────────────────────── */
+
+.card-contacts {
+	display: flex;
+	gap: 0.75rem;
+	align-items: center;
+}
+
+.card-contact-link {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 34px;
+	height: 34px;
+	border-radius: 50%;
+	border: 1.5px solid rgba(255, 255, 255, 0.45);
+	color: #fff;
+	text-decoration: none;
+	transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.card-contact-link:hover {
+	border-color: #fff;
+	background: rgba(255, 255, 255, 0.15);
+}
+
+.card-contact-link svg {
+	width: 15px;
+	height: 15px;
+	fill: #fff;
+}
