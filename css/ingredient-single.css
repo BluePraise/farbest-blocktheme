@@ -52,10 +52,11 @@
     color: var(--farbest-warm-grey);
 }
 
-/* ── Header row (title + benefits left / category SVG + CTA right) ────────── */
+/* ── Header row: title full row, below two columns: Application benefits left, fiber benefits right. (benefits left / category SVG + CTA right) ────────── */
 
 .farbest-ingredient-single .ingredient-header-row {
     display: flex;
+    flex-direction: column;
     align-items: flex-start;
     gap: 40px;
     margin-bottom: 32px;
@@ -66,6 +67,7 @@
 .farbest-ingredient-single .ingredient-header-left {
     flex: 1 1 0;
     min-width: 0;
+    width: 54rem;
 }
 
 .farbest-ingredient-single .ingredient-header-aside {
@@ -258,3 +260,39 @@
 }
 
 /* SVG watermark moved to global.css (loads on all ingredient page types) */
+
+/* ── Benefits columns pattern (farbest/benefits-columns) ─────────────────── */
+
+.farbest-benefits-columns {
+    padding: 20px 24px;
+    margin-bottom: 28px;
+}
+
+.farbest-benefits-columns__heading {
+    margin: 0 0 10px !important;
+    font-size: 1rem !important;
+    font-weight: 700 !important;
+    color: var(--farbest-warm-grey) !important;
+    text-transform: none !important;
+    letter-spacing: normal !important;
+}
+
+.farbest-benefits-columns__list {
+    margin: 0 !important;
+    padding-left: 0 !important;
+    list-style: none !important;
+    font-size: 1rem;
+    color: var(--farbest-warm-grey);
+    line-height: 1.7;
+}
+
+.farbest-benefits-columns__list li::before {
+    content: "• ";
+    color: var(--farbest-warm-grey);
+}
+
+@media (max-width: 640px) {
+    .farbest-benefits-columns {
+        padding: 16px;
+    }
+}
