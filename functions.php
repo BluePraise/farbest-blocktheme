@@ -144,7 +144,6 @@ function farbest_block_theme_styles() {
 		true
 	);
 
-	// card-grid.js is enqueued lazily when the block renders — see the render_block filter below.
 }
 add_action( 'wp_enqueue_scripts', 'farbest_block_theme_styles' );
 

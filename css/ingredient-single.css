@@ -127,39 +127,6 @@
     line-height: 1.2;
 }
 
-/* ── Benefits columns ─────────────────────────────────────────────────────── */
-
-.farbest-ingredient-single .ingredient-benefits {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 24px;
-    margin-bottom: 28px;
-    padding: 20px 0;
-    border-radius: 5px;
-}
-
-.farbest-ingredient-single .ingredient-benefits__column {
-    flex: 1 1 180px;
-}
-
-.farbest-ingredient-single .ingredient-benefits__heading {
-    margin: 0 0 8px;
-    font-size: 0.8rem;
-    font-weight: 700;
-    color: var(--farbest-teal);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-}
-
-.farbest-ingredient-single .ingredient-benefits__list {
-    margin: 0;
-    padding-left: 18px;
-    font-size: 1rem;
-    color: var(--farbest-warm-grey);
-    line-height: 1.7;
-    font-weight: 400;
-}
-
 /* ── Certifications row ───────────────────────────────────────────────────── */
 
 .ingredient-certifications__list {
@@ -295,4 +262,32 @@
     .farbest-benefits-columns {
         padding: 16px;
     }
+}
+
+/* ── Vendors ──────────────────────────────────────────────────────────────── */
+
+.ingredient-vendors {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px solid var(--wp--preset--color--beige);
+}
+
+.ingredient-vendors__item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.ingredient-vendors__logo {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+}
+
+.ingredient-vendors__text {
+    font-size: 0.875rem;
+    color: var(--farbest-warm-grey);
 }
