@@ -10,17 +10,32 @@ require_once get_template_directory() . '/inc/card-grid-block.php';
 function farbest_block_theme_setup() {
 	add_theme_support( 'wp-block-styles' );
 	add_theme_support( 'editor-styles' );
+	add_theme_support( 'align-wide' );
 	add_editor_style( 'css/tokens.css' );
 	register_block_pattern_category( 'farbest', array( 'label' => __( 'Farbest', 'farbest-block-theme' ) ) );
 }
 add_action( 'after_setup_theme', 'farbest_block_theme_setup' );
+
+/**
+ * File-modification-time based asset version for cache busting.
+ *
+ * Returns the file's mtime so browsers and CDNs fetch a fresh copy whenever the
+ * asset changes, instead of relying on a manually bumped version string.
+ *
+ * @param string $relative_path Path relative to the theme root, e.g. 'css/global.css'.
+ * @return string Version string.
+ */
+function farbest_asset_version( $relative_path ) {
+	$file = get_template_directory() . '/' . ltrim( $relative_path, '/' );
+	return file_exists( $file ) ? (string) filemtime( $file ) : '1.0.0';
+}
 
 function farbest_block_theme_register_styles() {
 	wp_register_style(
 		'farbest-tokens',
 		get_template_directory_uri() . '/css/tokens.css',
 		array(),
-		'1.0.0'
+		farbest_asset_version( 'css/tokens.css' )
 	);
 }
 add_action( 'init', 'farbest_block_theme_register_styles', 5 );
@@ -90,7 +105,7 @@ function farbest_enqueue_card_grid_block_style() {
 		'handle' => 'farbest-card-grid',
 		'src'    => get_template_directory_uri() . '/css/card-grid.css',
 		'deps'   => array( 'farbest-tokens' ),
-		'ver'    => '1.0.0',
+		'ver'    => farbest_asset_version( 'css/card-grid.css' ),
 	) );
 }
 add_action( 'init', 'farbest_enqueue_card_grid_block_style' );
@@ -110,21 +125,21 @@ function farbest_block_theme_styles() {
 		'farbest-global',
 		get_template_directory_uri() . '/css/global.css',
 		array( 'farbest-tokens' ),
-		'1.0.0'
+		farbest_asset_version( 'css/global.css' )
 	);
 
 	wp_enqueue_style(
 		'farbest-header',
 		get_template_directory_uri() . '/css/header.css',
 		array( 'farbest-tokens' ),
-		'1.0.0'
+		farbest_asset_version( 'css/header.css' )
 	);
 
 	wp_enqueue_style(
 		'farbest-footer',
 		get_template_directory_uri() . '/css/footer.css',
 		array( 'farbest-tokens' ),
-		'1.0.0'
+		farbest_asset_version( 'css/footer.css' )
 	);
 
 	if ( is_singular( 'fpc_ingredient' ) ) {
@@ -132,7 +147,7 @@ function farbest_block_theme_styles() {
 			'farbest-ingredient-single',
 			get_template_directory_uri() . '/css/ingredient-single.css',
 			array( 'farbest-tokens' ),
-			'1.0.0'
+			farbest_asset_version( 'css/ingredient-single.css' )
 		);
 	}
 
@@ -140,7 +155,7 @@ function farbest_block_theme_styles() {
 		'farbest-header',
 		get_template_directory_uri() . '/js/header.js',
 		array(),
-		'1.0.0',
+		farbest_asset_version( 'js/header.js' ),
 		true
 	);
 

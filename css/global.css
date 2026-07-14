@@ -68,8 +68,8 @@ body.post-type-archive-fpc_ingredient footer.wp-block-template-part::before {
     left: 0;
     right: 0;
     bottom: calc(100% - 60px); /* aligns with footer wave top edge */
-    background: url('../images/hills_and_valley.svg') no-repeat bottom left;
-    background-size: cover;
+    background: url('../images/hills_and_valley.svg') no-repeat bottom center;
+    background-size: 100%;
     height: 100vh;
     z-index: -2;
     pointer-events: none;

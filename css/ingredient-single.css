@@ -52,31 +52,34 @@
     color: var(--farbest-warm-grey);
 }
 
-/* ── Header row: title full row, below two columns: Application benefits left, fiber benefits right. (benefits left / category SVG + CTA right) ────────── */
+/* ── Header row: title full row, below two columns: content left / category SVG right, then (void) left / CTA right ────────── */
 
 .farbest-ingredient-single .ingredient-header-row {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 40px;
+    display: grid;
+    grid-template-columns: 1fr 40%;
+    grid-template-areas:
+        "title aside"
+        "left  aside";
+    align-items: start;
+    column-gap: 40px;
+    row-gap: 24px;
     margin-bottom: 32px;
     position: relative;
     z-index: 1;
 }
 
 .farbest-ingredient-single .ingredient-header-left {
-    flex: 1 1 0;
+    grid-area: left;
     min-width: 0;
-    width: 54rem;
 }
 
 .farbest-ingredient-single .ingredient-header-aside {
+    grid-area: aside;
     display: flex;
-    flex: 0 0 40%;
-    align-self: stretch;
     flex-direction: column;
     align-items: flex-end;
-    justify-content: flex-end;
+    justify-content: space-between;
+    align-self: stretch;
     gap: 24px;
     position: relative;
     z-index: 1;
@@ -96,12 +99,14 @@
 
 @media (max-width: 768px) {
     .farbest-ingredient-single .ingredient-header-row {
-        flex-direction: column-reverse;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "title"
+            "aside"
+            "left";
     }
 
     .farbest-ingredient-single .ingredient-header-aside {
-        flex: none;
-        width: 100%;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
@@ -116,6 +121,7 @@
 /* ── Header ───────────────────────────────────────────────────────────────── */
 
 .farbest-ingredient-single .ingredient-header {
+    grid-area: title;
     margin-block-start: 6rem;
     margin-bottom: 24px;
     padding-bottom: 16px;
@@ -193,7 +199,7 @@
 .farbest-ingredient-single .ingredient-description {
     min-height: 400px;
     color: var(--farbest-moss-green);
-    font-weight: 600;
+    font-weight: 300;
 }
 
 /* ── Details table ────────────────────────────────────────────────────────── */
