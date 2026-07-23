@@ -59,10 +59,10 @@ body {
 .farbest-header__nav ul {
 	display: flex;
 	align-items: center;
-	gap: 2rem;
+	gap: 3rem;
 	list-style: none;
 	margin: 0;
-	padding: 0;
+	padding: 10px 0;
 }
 
 .farbest-header__nav a {
@@ -75,6 +75,15 @@ body {
 
 .farbest-header__nav a:hover {
 	color: var(--farbest-teal);
+}
+
+ul.wp-block-navigation-submenu {
+	gap: 0.3rem;
+}
+
+.wp-block-navigation .has-child .wp-block-navigation__submenu-container>.wp-block-navigation-item>.wp-block-navigation-item__content {
+	border-bottom: 1px solid #ccc;
+	transition: border-color 0.2s ease;
 }
 
 /* ── Hamburger button ──────────────────────────────────────── */

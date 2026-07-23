@@ -255,6 +255,11 @@
 			"name": "page-card-grid",
 			"title": "Card Grid",
 			"postTypes": [ "page" ]
+		},
+		{
+			"name": "page-hills",
+			"title": "Hills & Valley",
+			"postTypes": [ "page" ]
 		}
 	],
 	"version": 3
